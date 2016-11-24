@@ -1,0 +1,4 @@
+[debug] Copy resource mappings: 
+[debug] 	(D:\chrome\quiz-management-service-master\sbt-crawler\src\main\resources\application.conf,D:\chrome\quiz-management-service-master\sbt-crawler\target\scala-2.11\classes\application.conf)
+[debug] 	(D:\chrome\quiz-management-service-master\sbt-crawler\src\main\resources\create.sql,D:\chrome\quiz-management-service-master\sbt-crawler\target\scala-2.11\classes\create.sql)
+[debug] 	(D:\chrome\quiz-management-service-master\sbt-crawler\src\main\resources\task.sql,D:\chrome\quiz-management-service-master\sbt-crawler\target\scala-2.11\classes\task.sql)
