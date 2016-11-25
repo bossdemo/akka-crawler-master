@@ -13,7 +13,7 @@ lazy val mainProject = Project(
     libraryDependencies ++= List(
       "com.typesafe.slick" %% "slick" % slickVersion,
       "com.typesafe.slick" %% "slick-codegen" % slickVersion,
-      "org.slf4j" % "slf4j-nop" % "1.7.19",
+//      "org.slf4j" % "slf4j-nop" % "1.7.19",
       "com.h2database" % "h2" % "1.4.191",
       "com.typesafe.akka" %% "akka-cluster-tools" % "2.4.1",
       "com.typesafe.akka" %% "akka-http-core" % "10.0.0",
@@ -23,6 +23,8 @@ lazy val mainProject = Project(
       "de.heikoseeberger" % "akka-http-json4s_2.11" % "1.10.1",
       "org.json4s" % "json4s-native_2.11" % "3.5.0",
       "org.json4s" % "json4s-ext_2.10" % "3.5.0",
+//      "ch.qos.logback" % "logback-core" % "1.1.7",
+      "ch.qos.logback" % "logback-classic" % "1.1.7",
       "com.typesafe.akka" %% "akka-slf4j" % "2.4.14"
     ),
     slick <<= slickCodeGenTask, // register manual sbt command

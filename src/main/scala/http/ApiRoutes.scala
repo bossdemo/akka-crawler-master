@@ -1,12 +1,13 @@
 package http
 
-import actor.{ClientActor, TaskDBActor}
+import actor.TaskDBActor
 import akka.actor.{ActorSystem, Props}
 import akka.http.scaladsl.server._
 import akka.pattern.ask
 import akka.stream.ActorMaterializer
 import akka.util.Timeout
-import bean.{TaskBean}
+import bean.TaskBean
+import org.slf4j.LoggerFactory
 import serializers.MyResource
 import tables.Tables.TaskRow
 //import tables.Tables.TaskJsonSupport._
@@ -19,6 +20,7 @@ import scala.util.{Failure, Success}
   * Created by tongtao.zhu on 2016/11/8.
   */
 trait ApiRoutes extends MyResource{
+  val log = LoggerFactory.getLogger("apiRoutes")
   val host = "127.0.0.1"
   val port = "5001"
 
@@ -35,15 +37,8 @@ trait ApiRoutes extends MyResource{
       post{
         entity(as[TaskBean]) { task =>
           complete{
+            log.info("start a task...")
             val future = Future{taskDBRef ? TaskRow(task.url,task.source,task.`type`,task.status,task.prior)}
-            future onComplete {
-              case Success(success) => {
-                //完成之后，发送消息通知client可以去url转发了
-                val clientActorRef = system.actorOf(Props[ClientActor], name = "clientActor")
-                clientActorRef ! task
-              }
-              case Failure(failure) =>
-            }
             task
           }
         }

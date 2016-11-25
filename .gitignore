@@ -1,0 +1,7 @@
+project/target
+log
+*.log
+target
+.idea
+*.class
+*.swp
