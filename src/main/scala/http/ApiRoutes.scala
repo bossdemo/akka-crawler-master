@@ -6,8 +6,10 @@ import akka.http.scaladsl.server._
 import akka.pattern.ask
 import akka.stream.ActorMaterializer
 import akka.util.Timeout
+import bean.{TaskBean}
 import serializers.MyResource
 import tables.Tables.TaskRow
+//import tables.Tables.TaskJsonSupport._
 
 import scala.concurrent._
 import scala.concurrent.duration._
@@ -31,9 +33,9 @@ trait ApiRoutes extends MyResource{
   def routes: Route = pathPrefix("crawler") {
     path("ping") {
       post{
-        entity(as[TaskRow]) { task =>
+        entity(as[TaskBean]) { task =>
           complete{
-            val future = Future{taskDBRef ? task}
+            val future = Future{taskDBRef ? TaskRow(task.url,task.source,task.`type`,task.status,task.prior)}
             future onComplete {
               case Success(success) => {
                 //完成之后，发送消息通知client可以去url转发了

@@ -1,4 +1,5 @@
 package tables
+
 // AUTO-GENERATED Slick data model
 /** Stand-alone Slick data model for immediate use */
 object Tables extends {
@@ -9,7 +10,6 @@ object Tables extends {
 trait Tables {
   val profile: slick.driver.JdbcProfile
   import profile.api._
-  import slick.model.ForeignKeyAction
   // NOTE: GetResult mappers for plain SQL are only generated for tables where Slick knows how to map the types of all columns.
   import slick.jdbc.{GetResult => GR}
 
@@ -19,12 +19,16 @@ trait Tables {
   def ddl = schema
 
   /** Entity class storing rows of table Task
+    *
     *  @param url Database column URL SqlType(VARCHAR)
     *  @param source Database column SOURCE SqlType(VARCHAR)
     *  @param `type` Database column TYPE SqlType(VARCHAR)
     *  @param status Database column STATUS SqlType(VARCHAR)
     *  @param prior Database column PRIOR SqlType(VARCHAR) */
   case class TaskRow(url: String, source: String, `type`: String, status: String, prior: String)
+//  object TaskJsonSupport extends DefaultJsonProtocol with SprayJsonSupport{
+//    implicit val PortofolioFormats = jsonFormat2(TaskRow)
+//  }
   /** GetResult implicit for fetching TaskRow objects using plain SQL queries */
   implicit def GetResultTaskRow(implicit e0: GR[String]): GR[TaskRow] = GR{
     prs => import prs._

@@ -18,6 +18,8 @@ lazy val mainProject = Project(
       "com.typesafe.akka" %% "akka-cluster-tools" % "2.4.1",
       "com.typesafe.akka" %% "akka-http-core" % "10.0.0",
       "com.typesafe.akka" %% "akka-http" % "10.0.0",
+      "com.typesafe.akka" %% "akka-http-spray-json" % "10.0.0",
+      "com.typesafe.akka" % "akka-http-core-experimental_2.11" % "2.0.4",
       "de.heikoseeberger" % "akka-http-json4s_2.11" % "1.10.1",
       "org.json4s" % "json4s-native_2.11" % "3.5.0",
       "org.json4s" % "json4s-ext_2.10" % "3.5.0",

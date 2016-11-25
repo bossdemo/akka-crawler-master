@@ -10,6 +10,8 @@ import ExecutionContext.Implicits.global
   * Created by tongtao.zhu on 2016/11/23.
   */
 
+case class TaskBean(url: String, source: String, `type`: String, status: String, prior: String)
+
 trait CrawlerTaskRepository{
   def create(crawlerTask: TaskRow)
   def find(crawlerTask: TaskRow)
