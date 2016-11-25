@@ -10,7 +10,6 @@ import scala.util.{Failure, Success}
 object Main extends ApiRoutes{
 
   def main(args: Array[String]) {
-//    print(11)
     startServer(5000)
   }
 
