@@ -1,8 +1,8 @@
-package actor
+package crawler.actor
 
 import akka.actor.{Actor, ActorLogging}
-import service.DBService
-import tables.Tables.TaskRow
+import crawler.service.DBService
+import crawler.tables.Tables._
 
 /**
   * Created by tongtao.zhu on 2016/11/24.

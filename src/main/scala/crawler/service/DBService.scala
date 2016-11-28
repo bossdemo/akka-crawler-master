@@ -1,9 +1,10 @@
-package service
+package crawler.service
 
-import bean.{H2CrawlerTaskRepository, CrawlerTaskRepository}
+import crawler.store.{H2CrawlerTaskRepository, CrawlerTaskRepository}
+import crawler.tables.Tables
 import de.heikoseeberger.akkahttpjson4s.Json4sSupport.ShouldWritePretty.{True, False}
 import org.slf4j.LoggerFactory
-import tables.Tables.TaskRow
+import Tables.TaskRow
 
 /**
   * Created by tongtao.zhu on 2016/11/23.
@@ -17,7 +18,7 @@ class DBService {
     //在插入之前先查找是否已经存在于表中
     val tasks = crawlerTaskRepository.find(crawlerTask)
     if (tasks.length >0){
-      log.info(s"已经存在${crawlerTask.url}任务")
+      log.info(s"${crawlerTask.url} task already exists...")
       return false
     }
     crawlerTaskRepository.create(crawlerTask)

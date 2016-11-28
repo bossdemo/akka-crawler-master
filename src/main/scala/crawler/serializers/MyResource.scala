@@ -1,4 +1,4 @@
-package serializers
+package crawler.serializers
 
 import akka.http.scaladsl.marshalling.{ToResponseMarshaller, ToResponseMarshallable}
 

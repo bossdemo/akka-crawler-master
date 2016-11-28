@@ -1,10 +1,9 @@
-package tables
+package crawler.tables
 
-import tables.Tables._
-import tables.Tables.profile.api._
+import crawler.tables.Tables._
+import crawler.tables.Tables.profile.api._
 
 import scala.concurrent.Await
-import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
 import scala.language.postfixOps
 

@@ -1,4 +1,4 @@
-package serializers
+package crawler.serializers
 
 import java.text.SimpleDateFormat
 

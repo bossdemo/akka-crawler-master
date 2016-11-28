@@ -1,6 +1,6 @@
-package bean
+package crawler.store
 
-import tables.Tables.profile.api._
+import crawler.tables.Tables.profile.api._
 
 /**
   * Created by tongtao.zhu on 2016/11/24.

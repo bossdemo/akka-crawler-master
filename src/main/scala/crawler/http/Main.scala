@@ -1,4 +1,4 @@
-package http
+package crawler.tables.http
 
 import akka.http.scaladsl.Http
 

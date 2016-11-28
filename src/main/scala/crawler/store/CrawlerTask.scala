@@ -1,17 +1,17 @@
-package bean
+package crawler.store
 
+import crawler.tables.Tables._
 import org.slf4j.LoggerFactory
-import tables.Tables._
-import tables.Tables.profile.api._
 import scala.concurrent.duration._
 import scala.concurrent._
+import crawler.tables.Tables.profile.api._
 import ExecutionContext.Implicits.global
 
 /**
   * Created by tongtao.zhu on 2016/11/23.
   */
 
-case class TaskBean(url: String, source: String, `type`: String, status: String, prior: String)
+case class Task(url: String, source: String, `type`: String, status: String, prior: String)
 
 trait CrawlerTaskRepository{
   def create(crawlerTask: TaskRow)
